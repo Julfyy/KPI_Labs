@@ -29,7 +29,7 @@ int main()
 void initArray(float *p)
 {
     srand(time(0));
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
         *p = -10 + static_cast<float>(rand()) / static_cast<float>(RAND_MAX / 20);
         p++;
@@ -39,7 +39,7 @@ void initArray(float *p)
 void outputArray(float *p)
 {
     cout << "Array looks like this\n";
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << *(p + i) << endl;
     }
