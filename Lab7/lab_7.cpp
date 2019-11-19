@@ -3,6 +3,13 @@
 #include <stdlib.h>
 #include <algorithm>
 using namespace std;
+/*
+30. Заданий масив Y(n), дійсних чисел, серед яких є і від'ємні.
+Упорядкувати елементи за зменшенням
+та знайти суму тих елементів упорядкованого масиву Y,
+що знаходяться на парних позиціях.
+Виконав: Шибецький Богдан
+*/
 
 const int n = 7;
 float array[n], *p;
@@ -47,7 +54,7 @@ void outputArray(float *p)
 float summArray(float *p)
 {
     float summ = 0;
-    for (int i = 2; i < n; i += 2)
+    for (int i = 0; i < n; i += 2)
     {
         summ += *(p + i);
     }
