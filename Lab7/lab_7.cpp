@@ -18,21 +18,23 @@ float summArray(float *p, int number_of_elements);
 
 int main()
 {
-
     const int n = 7;
     float array[n], *p;
+
     srand(time(0));
     initArray(array, n);
     outputArray(array, n);
+    cout << "Array looks like this\n\n";
     sortArray(array, n);
+     cout << "\nArray is sorted\n\n";
     outputArray(array, n);
     summArray(array, n);
+    cout << "\nSumm is " << summ << endl;
     return 0;
 }
 
 void initArray(float *p, int number_of_elements)
 {
-
     for (int i = 0; i < number_of_elements; i++)
     {
         p[i] = -10 + static_cast<float>(rand()) / static_cast<float>(RAND_MAX / 20);
@@ -41,7 +43,6 @@ void initArray(float *p, int number_of_elements)
 
 void outputArray(float *p, int number_of_elements)
 {
-    cout << "Array looks like this\n\n";
     for (int i = 0; i < number_of_elements; i++)
     {
         cout << p[i] << endl;
@@ -51,7 +52,6 @@ void outputArray(float *p, int number_of_elements)
 void sortArray(float *p, int number_of_elements)
 {
     sort(p, p + number_of_elements, greater<float>());
-    cout << "\nArray is sorted\n\n";
 }
 
 float summArray(float *p, int number_of_elements)
@@ -61,6 +61,5 @@ float summArray(float *p, int number_of_elements)
     {
         summ += p[i];
     }
-    cout << "\nSumm is " << summ << endl;
     return 0;
 }
