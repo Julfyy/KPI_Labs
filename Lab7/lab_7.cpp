@@ -11,52 +11,55 @@ using namespace std;
 Виконав: Шибецький Богдан
 */
 
-const int n = 7;
-float array[n], *p;
-
-void initArray(float *);
-void outputArray(float *);
-float summArray(float *);
+void initArray(float *p, int number_of_elements);
+void outputArray(float *p, int number_of_elements);
+void sortArray(float *p, int number_of_elements);
+float summArray(float *p, int number_of_elements);
 
 int main()
 {
-    initArray(array);
-    outputArray(array);
-    summArray(array);
+
+    const int n = 7;
+    float array[n], *p;
+    srand(time(0));
+    initArray(array, n);
+    outputArray(array, n);
+    sortArray(array, n);
+    outputArray(array, n);
+    summArray(array, n);
     return 0;
 }
 
-void initArray(float *p)
+void initArray(float *p, int number_of_elements)
 {
-    srand(time(0));
-    for (int i = 0; i < n; i++)
+
+    for (int i = 0; i < number_of_elements; i++)
     {
-        *p = -10 + static_cast<float>(rand()) / static_cast<float>(RAND_MAX / 20);
-        p++;
+        p[i] = -10 + static_cast<float>(rand()) / static_cast<float>(RAND_MAX / 20);
     }
 }
 
-void outputArray(float *p)
+void outputArray(float *p, int number_of_elements)
 {
-    cout << "Array looks like this\n";
-    for (int i = 0; i < n; i++)
+    cout << "Array looks like this\n\n";
+    for (int i = 0; i < number_of_elements; i++)
     {
-        cout << *(p + i) << endl;
-    }
-    sort(array, array + n, greater<float>());
-    cout << "\nArray looks like this after sorting\n";
-    for (int i = 0; i < n; i++)
-    {
-        cout << *(p + i) << endl;
+        cout << p[i] << endl;
     }
 }
 
-float summArray(float *p)
+void sortArray(float *p, int number_of_elements)
+{
+    sort(p, p + number_of_elements, greater<float>());
+    cout << "\nArray is sorted\n\n";
+}
+
+float summArray(float *p, int number_of_elements)
 {
     float summ = 0;
-    for (int i = 0; i < n; i += 2)
+    for (int i = 0; i < number_of_elements; i += 2)
     {
-        summ += *(p + i);
+        summ += p[i];
     }
     cout << "\nSumm is " << summ << endl;
     return 0;
