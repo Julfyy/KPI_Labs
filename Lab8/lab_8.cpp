@@ -8,7 +8,7 @@ using namespace std;
 
 typedef int Matrix[10][10];
 void inputArray(Matrix matr, int n);
-void outputArray(Matrix matr, int j);
+void outputArray(Matrix matr, int n);
 bool magicSquare(Matrix matr, int n);
 
 int main()
