@@ -3,6 +3,9 @@
 
 using namespace std;
 
+/*Перевірити чи є задана ціла матриця магічним квадратом
+(сума елементів кожного рядка, стовпця та кожної з двох діагоналей рівні).*/
+
 typedef int Matrix[10][10];
 void inputArray(Matrix matr, int n);
 void outputArray(Matrix matr, int j);
