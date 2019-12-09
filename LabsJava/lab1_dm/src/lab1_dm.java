@@ -19,19 +19,30 @@ public class lab1_dm {
             String letter = in.next();
 
             if (letter.contains("i")) {
-                System.out.print("Incident matrix: ");
+                System.out.print("\nIncident matrix: ");
                 outputArray(createIncidentMatrix(array));
             }
             if (letter.contains("a")) {
-                System.out.print("Adjacency matrix: ");
+                System.out.print("\nAdjacency matrix: ");
                 outputArray(createAdjacencyMatrix(array));
             }
             if (letter.contains("p")) {
-                System.out.print("Power of each node: ");
+                System.out.print("\nPower of each node: ");
                 outputArray(powerOfNodes(createAdjacencyMatrix(array)));
+                int sum = 0;
+                for (int i = 0; i < n; i++){
+                    sum += powerOfNodes(createAdjacencyMatrix(array))[i][1];
+
+                }
+                if (sum % n == 0) {
+
+                    System.out.println("Graph is homogeneous. The power is " + sum/n);
+                }
+                else
+                    System.out.println("Graph isn`t homogeneous");
             }
             if (letter.contains("s")) {
-                System.out.print("Isolated nodes are number ");
+                System.out.print("\nIsolated nodes are number ");
                 for (int i = 0; i < n; i++) {
                     if (isolatedDots(powerOfNodes(createAdjacencyMatrix(array)))[i] != 0)
                         System.out.print(isolatedDots(powerOfNodes(createAdjacencyMatrix(array)))[i] + "\t");
@@ -76,7 +87,7 @@ public class lab1_dm {
                 System.out.print(array[i][j] + "\t");
             }
         }
-        System.out.println("\n");
+        System.out.println();
     }
 
     public static int[][] createIncidentMatrix(int[][] array) {
@@ -107,15 +118,16 @@ public class lab1_dm {
 
 
     public static int[][] powerOfNodes(int[][] array) {
-        int[][] arrayPowerOfDots = new int[n][2];
+        int[][] arrayPowerOfNodes = new int[n][2];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                arrayPowerOfDots[i][0] = i + 1;
-                arrayPowerOfDots[i][1] += array[i][j];
+                arrayPowerOfNodes[i][0] = i + 1;
+                arrayPowerOfNodes[i][1] += array[i][j];
             }
+
         }
 
-        return arrayPowerOfDots;
+        return arrayPowerOfNodes;
     }
 
     public static int[] isolatedDots(int[][] array) {
