@@ -7,9 +7,9 @@ public class lab1_dm {
     public static int n, m;
 
     public static void main(String[] args) throws IOException {
-        int[][] array = readFile();
-        System.out.print("The file is read, graph looks like this: ");
-        outputArray(array);
+            int[][] array = readFile();
+            System.out.print("The file is read, graph looks like this: ");
+            outputArray(array);
         System.out.println("If you want to see incident matrix, type \'i\'.\nFor adjacency matrix, type \'a\'.\n" +
                 "For power of dots, type \'p\'.\nFor isolated dots, type \'s\'.\nFor hanged dots, type  \'h\'.\n" +
                 "To quit, type \'q\'.");
@@ -41,20 +41,24 @@ public class lab1_dm {
                 else
                     System.out.println("Graph isn`t homogeneous");
             }
-            if (letter.contains("s")) {
-                System.out.print("\nIsolated nodes are number ");
+            if (letter.contains("h")) {
+                System.out.print("\nHanged nodes are number ");
                 for (int i = 0; i < n; i++) {
-                    if (isolatedDots(powerOfNodes(createAdjacencyMatrix(array)))[i] != 0)
-                        System.out.print(isolatedDots(powerOfNodes(createAdjacencyMatrix(array)))[i] + "\t");
+                    if (hangedNodes(powerOfNodes(createAdjacencyMatrix(array)))[i] != 0)
+                        System.out.print(hangedNodes(powerOfNodes(createAdjacencyMatrix(array)))[i] + ",\t");
                 }
                 System.out.println();
 
             }
-            if (letter.contains("h")) {
-                System.out.print("\nHanged nodes are number ");
+            if (letter.contains("s")) {
+                System.out.print("\nIsolated nodes: ");
                 for (int i = 0; i < n; i++) {
-                    if (hangedDots(powerOfNodes(createAdjacencyMatrix(array)))[i] != 0)
-                        System.out.println(hangedDots(powerOfNodes(createAdjacencyMatrix(array)))[i] + "\t");
+                    if (isolatedNodes(powerOfNodes(createAdjacencyMatrix(array)))[i] != 0) {
+                        System.out.println(isolatedNodes(powerOfNodes(createAdjacencyMatrix(array)))[i] + "\t");
+
+                    }
+                    else System.out.println("do not exist."); break;
+
                 }
 
             }
@@ -130,7 +134,7 @@ public class lab1_dm {
         return arrayPowerOfNodes;
     }
 
-    public static int[] isolatedDots(int[][] array) {
+    public static int[] hangedNodes(int[][] array) {
         int[] arrayIsolatedDots = new int[n];
         for (int i = 0; i < n; i++) {
             if (array[i][1] == 1)
@@ -139,7 +143,7 @@ public class lab1_dm {
         return arrayIsolatedDots;
     }
 
-    public static int[] hangedDots(int[][] array) {
+    public static int[] isolatedNodes (int[][] array) {
         int[] arrayHangedDots = new int[n];
         for (int i = 0; i < n; i++) {
             if (array[i][1] == 0)
