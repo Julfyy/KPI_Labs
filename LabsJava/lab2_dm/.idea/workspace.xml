@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5f6b48e1-bac8-4b33-a48a-30cd573015a6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UhV6QYlShxpKYerBaV9k09Z5YY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+  </component>
+  <component name="RunManager" selected="Application.lab2_dm">
+    <configuration name="lab1_dm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab1_dm" />
+      <module name="lab1_dm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="lab2_dm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="lab2_dm" />
+      <module name="lab1_dm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.lab2_dm" />
+        <item itemvalue="Application.lab1_dm" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f6b48e1-bac8-4b33-a48a-30cd573015a6" name="Default Changelist" comment="" />
+      <created>1575808637353</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575808637353</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="555" y="215" width="847" height="684" key="#Project_Structure" timestamp="1575808681802">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="215" width="847" height="684" key="#Project_Structure/0.27.1920.1053@0.27.1920.1053" timestamp="1575808681802" />
+    <state x="669" y="251" width="571" height="612" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog" timestamp="1575840471550">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="669" y="251" width="571" height="612" key="#com.intellij.refactoring.move.moveMembers.MoveMembersDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1575840471550" />
+    <state x="711" y="424" width="488" height="265" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1576095898050">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="711" y="424" width="488" height="265" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.27.1920.1053@0.27.1920.1053" timestamp="1576095898050" />
+    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl" timestamp="1576058901148">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="311" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1576058901148" />
+    <state width="1874" height="274" key="GridCell.Tab.0.bottom" timestamp="1576107863332">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="274" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1576107863332" />
+    <state width="1874" height="274" key="GridCell.Tab.0.center" timestamp="1576107863331">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="274" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1576107863331" />
+    <state width="1874" height="274" key="GridCell.Tab.0.left" timestamp="1576107863331">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="274" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1576107863331" />
+    <state width="1874" height="274" key="GridCell.Tab.0.right" timestamp="1576107863332">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="274" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1576107863332" />
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1575913825912">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1575913825912" />
+    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1575913825912">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.center/0.27.1920.1053@0.27.1920.1053" timestamp="1575913825912" />
+    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1575913825911">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.left/0.27.1920.1053@0.27.1920.1053" timestamp="1575913825911" />
+    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1575913825912">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.right/0.27.1920.1053@0.27.1920.1053" timestamp="1575913825912" />
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor" timestamp="1576092106173">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="449" y="188" width="1022" height="737" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1576092106173" />
+    <state x="616" y="381" key="com.intellij.ide.util.TipDialog" timestamp="1576136808399">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="616" y="381" key="com.intellij.ide.util.TipDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1576136808399" />
+    <state x="515" y="292" width="880" height="609" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1575909770154">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="515" y="292" width="880" height="609" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.27.1920.1053@0.27.1920.1053" timestamp="1575909770154" />
+    <state x="609" y="269" width="700" height="530" key="recent.locations.popup" timestamp="1576095972934">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="609" y="269" width="700" height="530" key="recent.locations.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1576095972934" />
+    <state x="624" y="252" key="run.anything.popup" timestamp="1575886809702">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="624" y="252" key="run.anything.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1575886809702" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1576100834385">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1576100834385" />
+  </component>
+</project>
