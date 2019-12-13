@@ -1,5 +1,6 @@
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -10,48 +11,99 @@ public class lab2_dm {
 
     public static void main(String[] args) throws IOException {
         int[][] array = readFile();
+        Scanner in = new Scanner(System.in);
+        int [][] adjMatr = createAdjacencyMatrix(array);
+
         System.out.print("The file is read, graph looks like this: ");
         outputArray(array);
-
-
+        System.out.println("The graph is oriented? (y/n)");
+        String answer = in.nextLine();
+        if (answer.contains("n")){
+            adjMatr = findSymmetricalMatrix(createAdjacencyMatrix(array));
+        }
+        System.out.print("Adjacency");
+        outputArray(adjMatr);
         System.out.print("Path matrix  looks like this: ");
-        outputArray(createPathMatrix(createAdjacencyMatrix(array)));
+        outputArray(createPathMatrix(findSymmetricalMatrix(adjMatr)));
         System.out.print("Reach matrix  looks like this: ");
-        outputArray(createReachMatrix(createAdjacencyMatrix(array)));
-        System.out.println("Diameter  is: " + findDiameter(createPathMatrix(createAdjacencyMatrix(array))));
-        System.out.println("Center is node: " + findCenter(createPathMatrix(createAdjacencyMatrix(array))));
+        outputArray(createReachMatrix(adjMatr));
+        if (answer.contains("n")) {
+            System.out.println("Diameter  is: " + findDiameter(createPathMatrix(createAdjacencyMatrix(array))));
+            System.out.println("Center node is: " + findCenter(createPathMatrix(createAdjacencyMatrix(array))));
+            System.out.println("Radius is: " + findRadius(createPathMatrix(findSymmetricalMatrix(createAdjacencyMatrix(array)))));
+        }
 
 
     }
-    public static int findDiameter(int[][] pathMatr){
-        int diameter = 0;
-            for (int i = 0; i < pathMatr.length; i++)
-                diameter = Arrays.stream(pathMatr[i]).max().getAsInt();
-       return diameter;
+
+
+
+    public static int findRadius(int[][] pathMatr) {
+        int radius = 0;
+        radius = Arrays.stream(pathMatr[findCenter(findSymmetricalMatrix(pathMatr)).get(0)]).min().getAsInt();
+        if (radius == 0)
+            return radius + 1;
+
+        return radius;
     }
 
-    public static int findCenter(int [][] pathMatr){
-        int center, minLength = 0, i;
-        int[] counter = new int[n];
-            for (i = 0; i < pathMatr.length; i++) {
-                minLength = Arrays.stream(pathMatr[i]).max().getAsInt();
-                if (minLength == 0)
-                    minLength++;
-                for (int j : pathMatr[i]) {
-                    if (pathMatr[i][j] == minLength)
-                        counter[i] = i;
+    public static int findDiameter(int[][] pathMatr) {
+        int[] diameter = new int[n];
+        for (int i = 0; i < n; i++)
+            diameter[i] = Arrays.stream(pathMatr[i]).max().getAsInt();
+
+        return Arrays.stream(diameter).max().getAsInt();
+    }
+
+    public static int[][] findSymmetricalMatrix(int[][] matrix) {
+        int[][] symmetricalMatr = new int[n][n];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (matrix[i][j] == 1) {
+                    symmetricalMatr[i][j] = matrix[i][j];
+                    symmetricalMatr[j][i] = matrix[i][j];
                 }
 
             }
-        center = Arrays.stream(counter).max().getAsInt();
+        }
+        return symmetricalMatr;
+    }
+
+    public static ArrayList<Integer> findCenter(int[][] pathMatr) {
+        ArrayList<Integer> center = new ArrayList<>();
+
+        int[] maxInLine = new int[n];
+        for (int j = 0; j < n; j++) {
+            int max = pathMatr[j][0];
+            for (int k = 0; k < n; k++) {
+                if (max < pathMatr[j][k]) {
+                    max = pathMatr[j][k];
+                }
+            }
+            maxInLine[j] = max;
+        }
+        int min = maxInLine[0];
+        for (int elements : maxInLine) {
+            if (min > elements) {
+                min = elements;
+            }
+        }
+
+        for (int i = 0; i < n; i++) {
+            if (min == maxInLine[i]) {
+                center.add(i + 1);
+            }
+        }
         return center;
     }
+
     public static int[][] createReachMatrix(int[][] adjacencyMatr) {
         int[][] reachMatrix = new int[n][n];
         for (int i = 0; i < n; i++)
             for (int j = 0; j < n; j++)
                 if (createPathMatrix(adjacencyMatr)[i][j] > 0 || i == j)
-                reachMatrix[i][j] = 1;
+                    reachMatrix[i][j] = 1;
                 else
                     reachMatrix[i][j] = 0;
         return reachMatrix;
@@ -59,17 +111,14 @@ public class lab2_dm {
 
     public static int[][] createPathMatrix(int[][] adjacencyMatr) {
         int[][] pathMatrix = new int[n][n];
-        for (int i = 0; i < adjacencyMatr.length; i++) {
-            for (int j = 0; j < adjacencyMatr.length; j++) {
-                if (i == j)
-                    pathMatrix[i][j] = 0;
-                else if (adjacencyMatr[i][j] == 1)
-                    pathMatrix[i][j] = adjacencyMatr[i][j];
-                else if (powerMatrix(adjacencyMatr, 2)[i][j] != 0)
-                    pathMatrix[i][j] = 2;
-                else if (powerMatrix(adjacencyMatr, 3)[i][j] != 0)
-                    pathMatrix[i][j] = 3;
-
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                for (int counter = n - 1; counter >= 1; counter--) {
+                    if (i == j)
+                        pathMatrix[i][j] = 0;
+                    else if (powerMatrix(adjacencyMatr, counter)[i][j] != 0)
+                        pathMatrix[i][j] = counter;
+                }
             }
         }
         return pathMatrix;
@@ -121,19 +170,6 @@ public class lab2_dm {
         System.out.println();
     }
 
-    public static int[][] createIncidentMatrix(int[][] array) {
-        int[][] incidentMatrix = new int[n][m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                if (i + 1 == array[j][0] && i + 1 == array[j][1]) incidentMatrix[i][j] = 2;
-                else if (i + 1 == array[j][0]) incidentMatrix[i][j] = -1;
-                else if (i + 1 == array[j][1]) incidentMatrix[i][j] = 1;
-                else incidentMatrix[i][j] = 0;
-            }
-        }
-        return incidentMatrix;
-    }
-
     public static int[][] createAdjacencyMatrix(int[][] array) {
 
         int[][] adjacencyMatrix = new int[n][n];
@@ -144,4 +180,17 @@ public class lab2_dm {
         }
         return adjacencyMatrix;
     }
+    public static int[][] findTransposedMatrix(int[][] matr) {
+        int[][] transposedMatr = new int[matr.length][matr[0].length];
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                transposedMatr[i][j] = matr[j][i];
+
+            }
+        }
+        return transposedMatr;
+
+    }
 }
+
