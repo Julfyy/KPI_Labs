@@ -3,6 +3,12 @@
 
 using namespace std;
 
+/* Розбити на склади згідно з правилами перенесення слів
+кожне слово на парній позиції у введеному з клавіатури рядку.
+Визначити слова, перенесення яких неможливе.
+*/
+
+
 string getWord(string);
 bool IsSpecSymbol(char);
 string makeSyllables(string);
