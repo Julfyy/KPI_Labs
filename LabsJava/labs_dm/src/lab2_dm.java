@@ -147,7 +147,7 @@ public class lab2_dm {
 
 
     public static int[][] readFile() throws IOException {
-        Scanner sc = new Scanner(new FileReader("/home/bohdan/IdeaProjects/lab1_dm/input.txt"));
+        Scanner sc = new Scanner(new FileReader("/home/bohdan/GitHubRepositories/KPI_Labs/LabsJava/labs_dm/input.txt"));
         n = sc.nextInt();
         m = sc.nextInt();
         int[][] array = new int[m][2];

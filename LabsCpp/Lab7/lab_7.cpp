@@ -23,13 +23,13 @@ int main()
 
     srand(time(0));
     initArray(array, n);
-    outputArray(array, n);
-    cout << "Array looks like this\n\n";
+    cout << "Array looks like this" << endl;
+    outputArray(array,n);
     sortArray(array, n);
-     cout << "\nArray is sorted\n\n";
+    cout << "\nArray is sorted" << endl;
     outputArray(array, n);
-    summArray(array, n);
-    cout << "\nSumm is " << summ << endl;
+    
+    cout << "Summ is " << summArray(array,n) << endl;
     return 0;
 }
 
@@ -61,5 +61,5 @@ float summArray(float *p, int number_of_elements)
     {
         summ += p[i];
     }
-    return 0;
+    return summ;
 }
