@@ -146,25 +146,25 @@ public class lab2_dm {
     }
 
 
-    public static int[][] readFile() throws IOException {
-        Scanner sc = new Scanner(new FileReader("/home/bohdan/IdeaProjects/lab1_dm/input.txt"));
-        n = sc.nextInt();
-        m = sc.nextInt();
-        int[][] array = new int[m][2];
+        public static int[][] readFile() throws IOException {
+            Scanner sc = new Scanner(new FileReader("/home/bohdan/GitHubRepositories/KPI_Labs/LabsJava/labs_dm/input.txt"));
+            n = sc.nextInt();
+            m = sc.nextInt();
+            int[][] array = new int[m][2];
 
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < 2; j++) {
-                array[i][j] = sc.nextInt();
+            for (int i = 0; i < m; i++) {
+                for (int j = 0; j < 2; j++) {
+                    array[i][j] = sc.nextInt();
+                }
             }
+            return array;
         }
-        return array;
-    }
 
     public static void outputArray(int[][] array) {
         for (int i = 0; i < array.length; i++) {
             System.out.print("\n");
             for (int j = 0; j < array[0].length; j++) {
-                System.out.print(array[i][j] + "\t");
+                System.out.print(array[i][j]     + "\t");
             }
         }
         System.out.println();
@@ -180,17 +180,6 @@ public class lab2_dm {
         }
         return adjacencyMatrix;
     }
-    public static int[][] findTransposedMatrix(int[][] matr) {
-        int[][] transposedMatr = new int[matr.length][matr[0].length];
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                transposedMatr[i][j] = matr[j][i];
-
-            }
-        }
-        return transposedMatr;
-
-    }
 }
 
