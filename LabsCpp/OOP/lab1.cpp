@@ -2,12 +2,15 @@
 
 using namespace std;
 int Add(int,int);
-bool Compare(int, int);
+void Compare(int, int, int &c);
 
 int main()
 {
     cout << Add(4, 5) << endl;
-    cout << Compare(9, 8) << endl;
+    int c;
+    Compare(3, 6, c);
+    cout << c << endl;
+
     return 0;
 }
 
@@ -16,23 +19,16 @@ int Add(int x, int y)
     while (y != 0)
     {
         int carry = x & y;
-
         x = x ^ y;
-
         y = carry << 1;
     }
 
     return x;
 }
 
-bool Compare(int x, int y)
+void Compare(int x, int y, int &c)
 {
-    int temp = Add(x, Add(~y, 1));
-    temp >>= 31;
-
-    
-    
-
-    return !temp;
-
+    int sign = Add(x, Add(~y, 1));
+    sign >>= 31;
+    c = !sign;
 }
