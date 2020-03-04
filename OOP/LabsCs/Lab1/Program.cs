@@ -1,11 +1,8 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Net.Http.Headers;
-using Microsoft.VisualBasic.CompilerServices;
 
-namespace ConsoleApp1
+namespace Lab1
 {
-    class Program
+    static class Program
     {
         static void Main(string[] args)
         {
